@@ -10,9 +10,20 @@ namespace XinGenerator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(GenerateXin());
-            Console.ReadKey();
-		}
+            bool anotherOne = new bool();
+            anotherOne = true;
+            while (anotherOne){
+                Console.WriteLine(GenerateXin());
+                Console.WriteLine("Press Esc for quit");
+                Console.WriteLine("Press any key to get another");
+                var key=Console.ReadKey().Key;
+                Console.WriteLine();
+                if (key==ConsoleKey.Escape)
+                {
+                    anotherOne = false;
+                }
+            }
+        }
         static string GenerateXin()
         {
             Random rn = new Random();
